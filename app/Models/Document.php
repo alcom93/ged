@@ -28,12 +28,11 @@ class Document extends Model
         return $this->usersPermissions()
             ->where('user_id', $userId)
             ->exists();
-            //select * from usersPermissions where user_id=$userId
     }
 
     public function permissionForUser(int $userId): string|null
     {
-        //    $userId= Auth::user()->id;
+
         $permission = $this->usersPermissions()
             ->where('user_id', $userId)
             ->select('permission_id')->first();
@@ -62,26 +61,22 @@ class Document extends Model
     }
 
 
-    /**
-     * 
-     */
+
     public function canDownload(): bool
     {
         $currentUser = Auth::user()->id;
         //peut telecharger si j'ai une permission read ou write ou je suis proprietaire ou l'acces au document est public
-       if($this->hasPermission($currentUser) || $this->created_by == $currentUser || $this->access == 'public'){
-        return \true;
-       }
-       return \false;
-
+        if ($this->hasPermission($currentUser) || $this->created_by == $currentUser || $this->access == 'public') {
+            return \true;
+        }
+        return \false;
     }
 
     public function canUpdate(): bool
     {
         $currentUser = Auth::user()->id;
-\dump($this->created_by == $currentUser);
-\dump($this->hasPermission($currentUser, 'write'));
-        if ($this->created_by == $currentUser || $this->permissionForUser($currentUser)=='write') {
+
+        if ($this->created_by == $currentUser || $this->permissionForUser($currentUser) == 'write') {
             return true;
         }
 
