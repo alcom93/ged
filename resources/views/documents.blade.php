@@ -70,20 +70,32 @@
                         <td>{{ $document->category->name }}</td>
                         <td>{{ $document->createdBy->name }}</td>
                         <td>{{ $document->source }}</td>
-                        <td>{{ $document->access }}</td>
+                        <td>
+                            @if ($document->access == 'private')
+                                @if ($document->created_by == Auth::user()->id)
+                                    <img src="{{ asset('img/Image5.png') }}" alt="Lock">
+                                @elseif ($document->usersPermissions()->where('user_id', Auth::user()->id)->exists())
+                                    <img src="{{ asset('img/Image7.png') }}" alt="Share">
+                                @else
+                                    <img src="{{ asset('img/Image4.png') }}" alt="Private">
+                                @endif
+                            @else
+                                <img src="{{ asset('img/Image6.png') }}" alt="Public"style="width: 20px; height: 20px;">
+                            @endif
+                        </td>
                         <td>
                             @if ($document->isPrivate())
                                 @if (
                                     $document->created_by == Auth::user()->id ||
                                         $document->usersPermissions()->where('user_id', Auth::user()->id)->exists())
                                     <a href="{{ route('show-doc-page', ['id' => $document->id]) }}"
-                                        class="btn btn-primary">Show</a>
+                                        ><img src="{{asset('img/Image3.png')}}" alt=""></a>
                                 @else
-                                    <button class="btn btn-primary"disabled>Show</button>
+                                    <img src="{{asset('img/Image1.png')}}" disabled>
                                 @endif
                             @else
                                 <a
-                                    href="{{ route('show-doc-page', ['id' => $document->id]) }}"class="btn btn-primary">Show</button></a>
+                                    href="{{ route('show-doc-page', ['id' => $document->id]) }}"><img src="{{asset('img/Image3.png')}}" alt=""></a>
                             @endif
                             {{-- @if ($document->access == 'private')
                                 delete
