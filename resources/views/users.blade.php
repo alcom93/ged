@@ -7,7 +7,8 @@
         <div class="row">
             <div class="col-md-6">
                 <h1>
-                    <center>Create User</center>
+                    <img src="{{asset('img/btn-customers.png')}}" alt=""style="width: 50px; height: 50px;">
+                    Add New User
                 </h1>
                 @if (session('success'))
                     <div class="alert alert-primary" role="alert">
@@ -53,10 +54,6 @@
                 </form>
             </div>
             <div class="col-md-6">
-                <h1>
-                    <center>Users Page</center>
-                </h1>
-
                 <!-- Liste des utilisateurs -->
                 <table class="table table-bordered mt-4">
                     <thead class="thead-dark">

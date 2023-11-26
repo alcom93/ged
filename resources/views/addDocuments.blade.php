@@ -2,7 +2,11 @@
 
 @section('content')
     <div class="container">
-        <h1>Add Document</h1>
+        <div class="row">
+            <div class="col-md-6">
+        <h1>
+            <img src="{{asset('img/btn-add-document.png')}}" alt=""style="width: 50px; height: 50px;">
+            ADD YOUR DOCUMENTS​</h1>
         
         @if (session('success'))
         <div class="alert alert-success" role="alert">{{ session('success') }}</div>
@@ -89,5 +93,13 @@
 
             <button type="submit" class="btn btn-primary">Add Document</button>
         </form>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center mt-4">
+            <img src="{{ asset('img/téléchargement.png') }}" alt="Votre Image" style="width: 400px;">
+        </div>
+        </div>
     </div>
+    </div>
+</div>
 @endsection

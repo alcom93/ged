@@ -7,7 +7,8 @@
 @section('content')
     <div class="container">
         <h1>
-            <center>Page Document</center>
+            <img src="{{ asset('img/btn-contract.png') }}" alt=""style="width: 50px; height: 50px;">
+            Search documents  filtered:​
         </h1>
         {{-- formulaire de filtre --}}
         <form method="GET" action="#" class="mb-4">

@@ -33,16 +33,16 @@
             </div>
         </div>
         <div class="row justify-content-center mt-5">
-            <!-- Card Clients -->
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
+            <!-- Card Scan -->
+            <div class="col-6 col-md-4 col-lg-3 mb-3" style="opacity: 0.5">
                 <div class="card text-center">
                     <div class="card-body">
-                        <div class="card-icon mb-3">
-                            <img src="{{ asset('img/btn-customers.png') }}" alt="Clients" class="card-img-top"
+                        <div class="card-icon mb-3" >
+                            <img src="{{ asset('img/btn-customers.png') }}" alt="Scan" class="card-img-top"
                                 style="width: 60px; height: 60px;">
                         </div>
-                        <h5 class="card-title">Clients</h5>
-                        <a href="{{ route('setting-user-page') }}" class="btn btn-info " disabled>Go somewhere</a>
+                        <h5 class="card-title" style="color: gray">Scan</h5>
+                        <button class="btn btn-dark"  disabled>Go somewhere</button>
                     </div>
                 </div>
             </div>
