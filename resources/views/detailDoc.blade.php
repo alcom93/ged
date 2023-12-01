@@ -3,10 +3,10 @@
 
 
 @section('content')
-    <h1>
+    <h3 style="margin:35px 0 ; ">
         <img src="{{ asset('img/btn-contract.png') }}" alt=""style="width: 50px; height: 50px;">
         Details  documents :{{ $detail->name }}
-    </h1>
+    </h3>
 
     <div class="row">
         <div class="col-md-6 ">

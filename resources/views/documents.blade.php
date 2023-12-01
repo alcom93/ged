@@ -6,10 +6,10 @@
 
 @section('content')
     <div class="container">
-        <h1>
+        <h3 style="margin:35px 0 ; ">
             <img src="{{ asset('img/btn-contract.png') }}" alt=""style="width: 50px; height: 50px;">
             Search documents  filtered:​
-        </h1>
+        </h3>
         {{-- formulaire de filtre --}}
         <form method="GET" action="#" class="mb-4">
             <div class="row">

@@ -6,10 +6,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1>
+                <h3 style="margin:35px 0 ; ">
                     <img src="{{asset('img/btn-customers.png')}}" alt=""style="width: 50px; height: 50px;">
                     Add New User
-                </h1>
+                </h3>
                 @if (session('success'))
                     <div class="alert alert-primary" role="alert">
                         {{ session('success') }}

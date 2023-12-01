@@ -4,9 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-        <h1>
+        <h3 style="margin:35px 0 ; ">
             <img src="{{asset('img/btn-add-document.png')}}" alt=""style="width: 50px; height: 50px;">
-            ADD YOUR DOCUMENTS​</h1>
+            ADD YOUR DOCUMENTS​</h3>
         
         @if (session('success'))
         <div class="alert alert-success" role="alert">{{ session('success') }}</div>

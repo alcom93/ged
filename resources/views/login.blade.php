@@ -3,9 +3,9 @@
     LOGIN
 @endsection
 @section('content')
-    <h1>
+    <h3 style="margin:35px 0 ; ">
         <center>my login</center>
-    </h1>
+    </h3>
     <div class="row justify-content-center " style="margin-top: 120px">
     <form class="col-3" action="{{route('login-action')}}" method="POST">
         @csrf

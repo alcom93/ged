@@ -66,36 +66,40 @@
 <body>
     <nav class="navbar">
         <div class="container-fluid">
-            <a class="navbar-brandmb-0 h19" href="{{ route('homepage') }}">NASSIF SOFTSass v1.0</a>
+            <a class="navbar-brandmb-0 h3 style="margin:35px 0 ; "9" href="{{ route('homepage') }}">NASSIF SOFTSass v1.0</a>
             <div class="d-flex align-items-center mx-auto">
                 <a href="#" class="me-3 p-3"> Platform </a>
                 <a href="#" class="me-3 p-3"> Solution</a>
                 <a href="#" class="me-3 p-3"> Partner</a>
                 <a href="#" class="me-3 p-3">Support</a>
             </div>
-                <div class="d-flex align-items-center ">
+            <div class="d-flex align-items-center ">
                 @guest
                     <a href="{{ route('login-page') }}" class="btn btn-outline-light">
-                        <img src="{{ asset('img/téléchargement.jpeg') }}" alt="Sign In" style="width: 30px; height: 30px;margin-right: 5px"> Sign In</a>
+                        <img src="{{ asset('img/téléchargement.jpeg') }}" alt="Sign In"
+                            style="width: 30px; height: 30px;margin-right: 5px"> Sign In</a>
                 @endguest
                 @auth
-                <img src="{{ asset('img/téléchargement (1).jpeg') }}" alt="connecter" style="width: 30px; height: 30px;margin-right: 5px">  <span style="color: white">{{ Auth::user()->name }}</span>
-                    
+                    <img src="{{ asset('img/téléchargement (1).jpeg') }}" alt="connecter"
+                        style="width: 30px; height: 30px;margin-right: 5px"> <span
+                        style="color: white">{{ Auth::user()->name }}</span>
+
                     @if (Auth::user()->isAdmin())
-                    <span style="color: white"> (admin)</span>
+                        <span style="color: white"> (admin)</span>
                     @endif -
                     <form class="mb-0" action="{{ route('logout-action') }}" method="post">
                         @method('delete')
                         @csrf
                         <button class="btn btn-link text-info">
-                            <img src="{{ asset('img/images (2).png') }}" alt="Logout" style="width: 30px; height: 30px;margin-right: 5px"> log out</button>
+                            <img src="{{ asset('img/images (2).png') }}" alt="Logout"
+                                style="width: 30px; height: 30px;margin-right: 5px"> log out</button>
                     </form>
                 @endauth
             </div>
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container" style=" padding-bottom: 50px; margin-bottom: 50px;">
         @yield('content')
     </div>
     <div class="footer">

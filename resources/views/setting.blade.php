@@ -6,10 +6,10 @@
 
 @section('content')
     <div class="container">
-        <h1>
+        <h3 style="margin:35px 0 ; ">
             <img src="{{ asset('img/btn-settings.png') }}" alt="" style="width: 50px; height: 50px;">
             page settings
-        </h1>
+        </h3>
 
         <div class="row justify-content-center align-items-center">
             <!-- Card Clients -->

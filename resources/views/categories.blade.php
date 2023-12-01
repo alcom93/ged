@@ -7,10 +7,10 @@
 
 @section('content')
     <div class="container">
-        <h1>
+        <h3 style="margin:35px 0 ; ">
             <img src="{{ asset('img/btn-settings.png') }}" alt=""style="width: 50px; height: 50px;">
             Add category
-        </h1>
+        </h3>
         <div class="row justify-content-center mt-5">
             <div class="col-md-6">
                 <div class="card">
