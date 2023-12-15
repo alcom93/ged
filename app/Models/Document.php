@@ -76,7 +76,7 @@ class Document extends Model
     {
         $currentUser = Auth::user()->id;
 
-        if ($this->created_by == $currentUser || $this->permissionForUser($currentUser) == 'write') {
+        if ($this->created_by == $currentUser || $this->permissionForUser($currentUser) == 'read-write') {
             return true;
         }
 
