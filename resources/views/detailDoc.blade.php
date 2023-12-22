@@ -68,7 +68,7 @@
                     <button class="btn btn-primary"disabled>Update</button>
                 @endif
 
-                <a href="" class="btn btn-success">Download</a>
+                <a href="{{ route('download-document', ['document_id' => $detail->id]) }}" class="btn btn-success"" class="btn btn-success">Download</a>
 
                 @if ($detail->canDelete() && $detail->isPrivate())
                     <a href="" class="btn btn-danger">Delete</a>

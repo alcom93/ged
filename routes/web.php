@@ -32,6 +32,7 @@ Route::prefix('/documents')->middleware('auth')->controller(DocumentsController:
     Route::get('/add-form', 'showForm')->name('add-form-doc-page');
     Route::post('/add-form-action', 'addFormAction')->name('add-form-doc-action');
     Route::get('/remove/{id}', 'removeAction')->name('remove-doc-action');
+    Route::get('/download-document/{document_id}','downloadDocument')->name('download-document');
 });
 Route::post('/add-perm-action', [PermissionController::class, 'addPermAction'])->name('add-perm-us-action')->middleware('auth');
 

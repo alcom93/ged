@@ -10,6 +10,7 @@ use App\Models\Document;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -94,5 +95,21 @@ class documentsController extends Controller
         Storage::delete($oldPath);
         Document::destroy($id);
         return \redirect()->route('all-docs-page')->with('success', 'Document deleted.');
+    }
+    public function downloadDocument($document_id)
+    {
+        // Récupérez le modèle du document
+        $document = Document::findOrFail($document_id);
+
+        // Vérifiez les autorisations avant de permettre le téléchargement
+        if ($document->canDownload()) {
+            $filePath = storage_path('app/' . $document->path); // Assurez-vous que le chemin est correct
+
+            // Renvoie le fichier pour le téléchargement
+            return Response()->download($filePath, $document->name . '.' . pathinfo($filePath, PATHINFO_EXTENSION));
+        }
+
+        // Si les autorisations ne sont pas remplies, redirigez l'utilisateur ou affichez un message d'erreur
+        return redirect()->back()->with('error', 'Unable to download document');
     }
 }
