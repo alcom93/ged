@@ -76,11 +76,11 @@
             <div class="d-flex align-items-center ">
                 @guest
                     <a href="{{ route('login-page') }}" class="btn btn-outline-light">
-                        <img src="{{ asset('img/téléchargement.jpeg') }}" alt="Sign In"
+                        <img src="{{ asset('img/log.png') }}" alt="Sign In"
                             style="width: 30px; height: 30px;margin-right: 5px"> Sign In</a>
                 @endguest
                 @auth
-                    <img src="{{ asset('img/téléchargement (1).jpeg') }}" alt="connecter"
+                    <img src="{{ asset('img/log.png') }}" alt="connecter"
                         style="width: 30px; height: 30px;margin-right: 5px"> <span
                         style="color: white">{{ Auth::user()->name }}</span>
 
