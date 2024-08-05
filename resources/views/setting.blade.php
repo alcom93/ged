@@ -42,7 +42,7 @@
             
                 <div class="col-md-6" style="backface-visibility: hidden">
                     <div class="text-center mt-4">
-                        <img src="{{ asset('img/images (1).jpeg') }}" alt="Votre Image" style="width: 400px;">
+                        <img src="{{ asset('img/image123.png') }}" alt="Votre Image" style="width: 400px;">
                     </div>
                 </div>
             </div>
