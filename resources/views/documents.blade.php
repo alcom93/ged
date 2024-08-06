@@ -8,7 +8,7 @@
     <div class="container">
         <h3 style="margin:35px 0 ; ">
             <img src="{{ asset('img/btn-contract.png') }}" alt=""style="width: 50px; height: 50px;">
-            Search documents  filtered:​
+            Search documents filtered:​
         </h3>
         {{-- formulaire de filtre --}}
         <form method="GET" action="#" class="mb-4">
@@ -89,14 +89,14 @@
                                 @if (
                                     $document->created_by == Auth::user()->id ||
                                         $document->usersPermissions()->where('user_id', Auth::user()->id)->exists())
-                                    <a href="{{ route('show-doc-page', ['id' => $document->id]) }}"
-                                        ><img src="{{asset('img/Image3.png')}}" alt=""></a>
+                                    <a href="{{ route('show-doc-page', ['id' => $document->id]) }}"><img
+                                            src="{{ asset('img/Image3.png') }}" alt=""></a>
                                 @else
-                                    <img src="{{asset('img/Image1.png')}}" disabled>
+                                    <img src="{{ asset('img/Image1.png') }}" disabled>
                                 @endif
                             @else
-                                <a
-                                    href="{{ route('show-doc-page', ['id' => $document->id]) }}"><img src="{{asset('img/Image3.png')}}" alt=""></a>
+                                <a href="{{ route('show-doc-page', ['id' => $document->id]) }}"><img
+                                        src="{{ asset('img/Image3.png') }}" alt=""></a>
                             @endif
                             {{-- @if ($document->access == 'private')
                                 delete
